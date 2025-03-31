@@ -34,7 +34,7 @@ locations_df = pd.DataFrame(locations_data)
 metadata_df = pd.DataFrame(metadata_data)
 
 
-2.	Once done with the validation and Loading of the Json files we move on to the merging stage based on ID:
+#	Once done with the validation and Loading of the Json files we move on to the merging stage based on ID:
 
 Here we combine the two Dataframes Using id  column as the key .
 
@@ -42,16 +42,14 @@ Code:-
 valid_points_per_type = merged_df['type'].value_counts()
 print("Valid Points per Type:\n", valid_points_per_type)
  
-3.	After merging both the JSON files we have our entire workbase ready with the data to work on based on the objectives thus we move on to the next phrase which is Counting Valid Points per Type
+# After merging both the JSON files we have our entire workbase ready with the data to work on based on the objectives thus we move on to the next phrase which is Counting Valid Points per Type
 Here we Count the number of valid entries for each type (example: cafes,hotels and restaurants).
 CODE:-
 valid_points_per_type = merged_df['type'].value_counts()
 print("Valid Points per Type:\n", valid_points_per_type)
  
 
-
-
-4.	Next we need to maintain a record for Average Rating per Type 
+# Next we need to maintain a record for Average Rating per Type 
 Here we group the data by TYPE and calculate the average rating for each group 
 
 CODE:-
@@ -59,8 +57,7 @@ average_rating_per_type = merged_df.groupby('type')['rating'].mean()
 print("Average Rating per Type:\n", average_rating_per_type)
 
  
-
-5.	Going onto the next step we need to identify the Location with the Highest Number of Reviews 
+# Going onto the next step we need to identify the Location with the Highest Number of Reviews 
 
 Here we find the location with the maximum value in the reviews column 
 
@@ -69,7 +66,7 @@ incomplete_data = merged_df[merged_df.isnull().any(axis=1)]
 print("Locations with Incomplete Data:\n", incomplete_data)
 
  
-6.	Finally as a part of the Bonus we move on the last step which is Identifying Locations with incomplete Data
+# 	Finally as a part of the Bonus we move on the last step which is Identifying Locations with incomplete Data
 
 Check for the Missing Values in the merged DataFrame.
 
